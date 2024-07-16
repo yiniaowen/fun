@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saemi's Page</title>
+    <style>
+        body {
+            background-color: #fff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            color: pink;
+            font-size: 2.5em;
+            margin: 1px 0;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        img {
+        
+            height: 300px;
+            width: 300px;
+            margin-top: 1px;
+        }
+
+        p {
+            color: pink;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        button {
+            background-color: pink;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #ff66b2;
+        }
+    </style>
+    <script>
+        function showHint() {
+            alert("Password is your nickname");
+        }
+
+        function login(event) {
+            event.preventDefault();
+            const password = document.getElementById('password').value;
+            if (password === 'gunzi-man') {
+                window.location.href = 'fun.html';
+            } else {
+                alert('Incorrect password. Please try again.');
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Welcome to Saemi's Page</h1>
+    <img src="c:\Users\saemi\Desktop\fun\download (1).jpeg" alt="Description of the image">
+    <div class="container">
+        <p>To continue enter your name and password</p>
+        <form onsubmit="login(event)">
+            <input type="text" placeholder="Your Name" required>
+            <input type="password" id="password" placeholder="Password (for hint click on 'Hint')" required>
+            <button type="button" onclick="showHint()">Hint</button>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</body>
+</html>
